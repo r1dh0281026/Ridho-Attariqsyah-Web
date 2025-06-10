@@ -1,0 +1,467 @@
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Profil Ridho Attariqsyah</title>
+<style>
+  :root {
+    --biru: #00bfff;
+    --pink: #ff4dd2;
+    --hitam: #111;
+    --putih: #fff;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--biru), var(--pink));
+    margin: 0; padding: 40px 20px;
+    color: var(--hitam);
+  }
+  section {
+    display: none;
+    background: var(--putih);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: opacity 0.3s ease;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  section.active {
+    display: block;
+    animation: fadeInUp 0.4s ease forwards;
+  }
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  h2 {
+    font-size: 28px;
+    color: var(--biru);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  img.section-img {
+    display: block;
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    border: 3px solid var(--pink);
+  }
+  .label-video {
+    background-color: var(--pink);
+    color: var(--putih);
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 12px;
+    margin: 10px auto 20px auto;
+    display: inline-block;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.5s ease;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    opacity: 0;
+  }
+  #btns {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  button {
+    background: var(--hitam);
+    color: var(--putih);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  button:hover:not(:disabled) {
+    background: var(--pink);
+  }
+  button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+
+  /* Hobi styles */
+  .hobi-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 320px;
+    margin: 20px auto;
+    align-items: center;
+  }
+  .hobi-box {
+    background: #f9f9ff;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideIn 0.8s ease forwards;
+  }
+  .anim-img {
+    animation: slideInImage 1s ease forwards;
+  }
+  .anim-text {
+    animation: slideInText 1s ease forwards;
+  }
+  .delay-1 {
+    animation-delay: 0.3s;
+  }
+  .delay-2 {
+    animation-delay: 0.6s;
+  }
+  .delay-3 {
+    animation-delay: 0.9s;
+  }
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInImage {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInText {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .hobi-box img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border: 5px solid #a020f0; /* ungu cerah */
+    border-radius: 16px;
+    margin-bottom: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hobi-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: #6a0dad;
+    margin: 0 0 6px 0;
+    text-align: center;
+  }
+  .hobi-desc {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    text-align: center;
+    animation: fadeInText 0.6s ease forwards;
+    animation-delay: 1.2s;
+    opacity: 0;
+  }
+  .hobi-extra {
+    font-size: 15px;
+    color: #555;
+    margin-top: 8px;
+    text-align: center;
+    font-style: italic;
+    animation: fadeInText 0.6s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+  }
+  @keyframes fadeInText {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @media(min-width: 600px) {
+    .hobi-container {
+      flex-direction: row;
+      max-width: 700px;
+    }
+    .hobi-box {
+      width: 33.33%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Slide 1 -->
+<section class="active">
+  <h2 class="typing anim-text">Hai, aku Ridho! 👋</h2>
+
+  <div class="hobi-container">
+
+    <div class="hobi-box anim-box delay-1" style="flex: 1;">
+      <img src="thumbnailvideo.png" alt="Video Personal Branding Ridho Attariqsyah" class="section-img anim-img" />
+      
+      <div class="label-video">
+        <a href="https://www.instagram.com/reel/DGYbnSqz3I2/?igsh=enlmOGwxMDJmNTlm" target="_blank" rel="noopener noreferrer">
+          🎥 Lihat Video Personal Branding-ku
+        </a>
+      </div>
+    </div>
+
+    <div class="hobi-box anim-box delay-2" style="flex: 1;">
+      <p class="hobi-desc anim-text" style="font-family: 'Comic Neue', 'Poppins', sans-serif; font-size: 1.1em;">
+        Halo semua! 👋<br><br>
+        Namaku <strong>Ridho Attariqsyah</strong>, lahir di <strong>Surabaya</strong> pada 28 Oktober 2006. Saat ini usiaku 18 tahun. Aku anak pertama dari dua bersaudara—jadi udah biasa jadi panutan (ciee 😎).<br><br>
+        Selamat datang di ruang digitalku, tempat aku berbagi cerita, karya, dan mimpi!✨<br><br>
+        Yuk, kenalan lebih dekat! 😊
+      </p>
+    </div>
+
+  </div>
+</section>
+  
+<!-- Slide 2 -->
+<section>
+  <h2>Hobi & Hal yang Aku Suka</h2>
+
+  <div class="hobi-container">
+    <div class="hobi-box anim-box delay-1">
+      <img src="gundam.jpg" alt="Merakit Gundam" class="anim-img" />
+      <p class="hobi-title anim-text">Merakit Gundam 🤖</p>
+      <p class="hobi-desc">Merakit model kit seperti Gundam yang penuh detail dan menantang.</p>
+      <p class="hobi-extra">Overall, ini adalah salah satu Gundam paling best — salah satu one of the best Gundam yang aku rakit: <strong>Wings Gundam Ver.Ka</strong>.</p>
+    </div>
+    <div class="hobi-box anim-box delay-2">
+      <img src="menggambar.jpg" alt="Menggambar" class="anim-img" />
+      <p class="hobi-title anim-text">Menggambar 🎨</p>
+      <p class="hobi-desc">Menggambar berbagai ilustrasi dan berekspresi lewat seni visual.</p>
+      <p class="hobi-extra">Salah satu gambar favoritku: karakter <strong>II Dotore</strong> dari Genshin Impact. Meskipun kurang mirip, tapi seru banget buat have fun!</p>
+    </div>
+    <div class="hobi-box anim-box delay-3">
+      <img src="memasak.jpg" alt="Memasak" class="anim-img" />
+      <p class="hobi-title anim-text">Memasak 🍳</p>
+      <p class="hobi-desc">Memasak dan eksplorasi rasa yang seru dan menantang kreativitas.</p>
+      <p class="hobi-extra">Masih pelajar, tapi sekarang lagi belajar bikin <strong>Nasi Biryani</strong> yang baik dan benar. Kalau tahu ilmunya, rasanya enak banget!!!</p>
+    </div>
+  </div>
+
+  <p data-original="Tinggal dan tumbuh besar di Surabaya selama 18 tahun ngajarin aku banyak hal, terutama soal minat dan hal-hal kecil yang ternyata bermakna. Aku suka membaca, menggambar, dan menikmati waktu luang dengan merakit. Selain itu, aku juga senang bermain, ngobrol santai, dan terus belajar tentang cara berkomunikasi yang baik. Belakangan, aku lagi tertarik bikin konten video dan mulai belajar memasak—karena eksplorasi rasa itu ternyata sama serunya kayak eksplorasi ide."></p>
+</section>
+
+<!-- Slide 3 -->
+<section>
+  <h2>Pendidikan Dasar — SDN Dr. Sutomo 5</h2>
+
+  <div class="hobi-container">
+    <div class="hobi-box anim-box delay-1">
+      <img src="ulangtahunpaksutarno.jpg" alt="Merayakan Ulang Tahun Pak Sutarno" class="anim-img" />
+      <p class="hobi-title anim-text">Merayakan Ulang Tahun Pak Sutarno 🎉</p>
+      <p class="hobi-desc">Momen hangat bersama Pak Sutarno, guru yang sangat berjasa, dirayakan bersama seluruh siswa 6C dengan penuh kebahagiaan.</p>
+    </div>
+
+    <div class="hobi-box anim-box delay-2">
+      <img src="kenangankelas.jpg" alt="Foto Kenangan Buku Tahunan" class="anim-img" />
+      <p class="hobi-title anim-text">Foto Kenangan Buku Tahunan 📘</p>
+      <p class="hobi-desc">Momen yang diabadikan di akhir tahun pelajaran sebagai kenangan indah bersama teman-teman sekelas dan guru tercinta.</p>
+    </div>
+
+    <div class="hobi-box anim-box delay-3">
+      <img src="temanteman.jpg" alt="Foto Bersama Teman-Teman" class="anim-img" />
+      <p class="hobi-title anim-text">Foto Bersama Teman-Teman 👬</p>
+      <p class="hobi-desc">Foto dari masa kelas 1 hingga kelas 5. Walau masih kecil dan polos, kenangan ini sangat membekas dalam ingatan.</p>
+    </div>
+
+    <div class="hobi-box anim-box delay-4">
+      <img src="fotokelas1hingga5c.jpg" alt="Foto Bersama Anak Kelas 1C hingga 5C" class="anim-img" />
+      <p class="hobi-title anim-text">Foto Bersama Anak Kelas 1C hingga 5C 📸</p>
+      <p class="hobi-desc">Foto yang sangat berkesan karena diambil saat perayaan Hari Pahlawan 10 November 🇮🇩🔥</p>
+    </div>
+  </div>
+
+  <!-- Deskripsi bawah -->
+  <p class="hobi-desc" style="margin-top: 1em; font-size: 1.1em; text-align: center;">
+    Aku menempuh pendidikan dasar di SDN Dr. Sutomo 5, Surabaya. Di sini aku mulai mengenal dunia belajar dengan cara yang menyenangkan dan penuh semangat. Nilai Ujian Nasional-ku saat itu sangat memuaskan, yaitu sekitar <strong>26,90</strong>🤩
+  </p>
+</section>
+
+<!-- Slide 4 -->
+<section>
+  <h2 style="text-align:center;">SMP — SMPN 3 Surabaya</h2>
+  <div class="hobi-container">
+    
+    <div class="hobi-box anim-box delay-1" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em;">
+      <img src="smp.jpg" alt="Foto SMP" class="anim-img" />
+      <p class="hobi-title anim-text" style="color: #6a0dad; font-weight: 600; text-align:center;">Perjalanan di SMPN 3 Surabaya</p>
+      <p class="hobi-desc">Setelah lulus dari SD, aku melanjutkan ke SMPN 3 Surabaya. Masuk di SMPN 3 rasanya seperti mimpi bagiku — ini salah satu pencapaian besar dalam hidupku. Di sini aku belajar lebih dalam dan bertemu banyak teman baru yang seru. Nilai akhirku mencapai <strong>90,80</strong>. Meskipun hasilnya kurang memuaskan menurutku, hal ini justru menjadi motivasi kuat untuk belajar lebih giat ke depannya 🔥.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Slide 5 -->
+<section>
+  <h2 style="text-align:center;">SMK — SMKN 10 Surabaya</h2>
+  <div class="hobi-container">
+
+    <!-- Jurusan Farmasi -->
+    <div class="hobi-box anim-box delay-1" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em;">
+      <img src="fkk.jpg" alt="Jurusan Farmasi" class="anim-img" />
+      <p class="hobi-title anim-text" style="color: #6a0dad; font-weight: 600;">Jurusan Farmasi 💊</p>
+      <p class="hobi-desc">Menempuh pendidikan jurusan Farmasi di SMKN 10 Surabaya membuka wawasan dan pengetahuan baru, terutama di bidang kesehatan dan pelayanan pasien. Di sini aku mendapatkan banyak pengalaman berharga baik di dalam laboratorium maupun praktik lapangan.</p>
+    </div>
+
+    <!-- Lomba Kimia Nasional -->
+    <div class="hobi-box anim-box delay-2" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em;">
+      <img src="kimia.jpg" alt="Lomba Kimia Nasional" class="anim-img" />
+      <p class="hobi-title anim-text" style="color: #6a0dad; font-weight: 600;">Lomba Tingkat Nasional: Kimia SMA 🧪</p>
+      <p class="hobi-desc">Mengikuti Olimpiade Science Nusantara bidang studi Kimia tingkat SMA dan berhasil meraih <strong>penghargaan emas</strong>. Mencapai peringkat 7 nasional adalah pengalaman luar biasa yang tak akan terlupakan!</p>
+    </div>
+
+    <!-- Intercultural Exchange -->
+    <div class="hobi-box anim-box delay-3" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em;">
+      <a href="https://www.instagram.com/reel/Cv17ApHNOLP/?igsh=MXRjdzRkeng5aWdxaw==" target="_blank">
+        <img src="intercultural.jpg" alt="Intercultural Exchange" class="anim-img" style="cursor: pointer;" />
+      </a>
+      <p class="hobi-title anim-text" style="color: #6a0dad; font-weight: 600;">Intercultural Exchange Student 🌎</p>
+      <p class="hobi-desc">Mengikuti kegiatan pertukaran pelajar yang diselenggarakan oleh <strong>Politeknik Ubaya</strong> bersama siswa dari Amerika Serikat. Kami berdiskusi tentang budaya, sistem kerja, perbedaan pola pikir, dan juga lapangan pekerjaan di masing-masing negara. Pengalaman ini membuatku semakin terbuka terhadap dunia luar.</p>
+      <p class="hobi-extra" style="text-align:center; font-style:italic; color:#6a0dad;">Klik fotonya untuk lihat videonya! 🎥</p>
+    </div>
+
+    <!-- Hasil UTBK -->
+    <div class="hobi-box anim-box delay-4" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em;">
+      <img src="utbk.jpg" alt="Hasil UTBK" class="anim-img" />
+      <p class="hobi-title anim-text" style="color: #6a0dad; font-weight: 600;">Hasil UTBK 📊</p>
+      <p class="hobi-desc">Meskipun hasil UTBK 2025 hanya mencapai <strong>600</strong> dan belum lolos, hal ini tidak akan mematahkan semangatku. Aku justru semakin bertekad untuk mempersiapkan diri lebih baik dan mencoba lagi di tahun berikutnya. Gagal bukan akhir, tapi langkah menuju sukses!</p>
+    </div>
+
+  </div>
+
+  <!-- Deskripsi panjang -->
+  <p class="anim-text" style="text-align:justify; margin-top:2em;">
+    Setelah melanjutkan ke SMK Negeri 10 Surabaya dengan mengambil jurusan Farmasi, aku mulai menanamkan ambisi yang sangat tinggi untuk meraih prestasi terbaik. Di sini, aku tidak hanya fokus pada pelajaran jurusan saja, tapi juga berusaha mengembangkan soft skill dan memperluas jaringan pertemanan yang sangat penting untuk masa depan.
+    <br><br>
+    Selama belajar, aku aktif mengikuti praktik laboratorium dan pelayanan pasien yang memberikan pengalaman langsung tentang dunia farmasi. Selain itu, aku juga meningkatkan kemampuan Bahasa Inggris melalui program Student Exchange dan berbagai lomba, seperti Olimpiade Sains.
+    <br><br>
+    Walaupun hasil UTBK 2025 belum mencapai target maksimal karena waktuku banyak tersita untuk magang, aku tetap bersemangat dan bertekad untuk memperbaiki diri serta mencoba kembali pada UTBK 2026 dengan persiapan yang lebih matang.
+    <br><br>
+    Dengan rata-rata nilai raport semester 1 hingga 5 sebesar <strong>87,62</strong>, aku percaya bahwa usaha dan kerja keras yang aku lakukan akan membawaku ke hasil yang lebih baik dan membuka banyak peluang untuk masa depan.
+  </p>
+</section>
+  
+<!-- Slide 6 -->
+<section>
+  <h2 style="text-align:center;">Pengalaman Magang 👨‍💼📈</h2>
+  <div class="hobi-container">
+
+    <!-- Magang VIVA Apotek -->
+    <div class="hobi-box anim-box delay-1" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em;">
+      <img src="viva.jpg" alt="Magang VIVA" class="anim-img" />
+      <p class="hobi-title anim-text" style="color: #6a0dad; font-weight: 600; text-align:center;">💼 VIVA Apotek (April 2024 – Juni 2024)</p>
+      <p class="hobi-desc">Saya adalah siswa jurusan Farmasi yang menjalani magang di Apotek Viva Simo Gunung selama 3 bulan. Selama magang, saya mempelajari dan mempraktikkan berbagai keterampilan, seperti pelayanan resep kepada pasien, membaca dan menyiapkan resep dengan teliti, menyusun obat sesuai standar farmasi, serta melakukan peracikan dan penyerahan obat. Pengalaman ini memperkuat kemampuan teknis saya dalam pelayanan farmasi komunitas dan meningkatkan kepercayaan diri dalam menghadapi pasien.</p>
+    </div>
+
+    <!-- Magang RS Marinir EWA -->
+    <div class="hobi-box anim-box delay-2" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em;">
+      <img src="ewa.jpg" alt="Magang EWA" class="anim-img" />
+      <p class="hobi-title anim-text" style="color: #6a0dad; font-weight: 600; text-align:center;">💼 RS Marinir Ewa Pangalila (Agustus 2024 – September 2024)</p>
+      <p class="hobi-desc">Saya menjalani magang selama 2 bulan di Instalasi Farmasi Rumah Sakit Marinir Ewa Pangalila. Di sini saya belajar tentang sistem instalasi farmasi rumah sakit, manajemen gudang obat dan logistik farmasi, serta penerapan budaya kerja disiplin dan profesional. Selain aspek teknis, saya juga dilatih pentingnya kedisiplinan, ketepatan waktu, serta budaya kerja seperti 3S (senyum, salam, sapa) dalam pelayanan kesehatan.</p>
+    </div>
+
+    <!-- Magang Apotek Airlangga -->
+    <div class="hobi-box anim-box delay-3" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em;">
+      <img src="airlangga.jpg" alt="Magang Airlangga" class="anim-img" />
+      <p class="hobi-title anim-text" style="color: #6a0dad; font-weight: 600; text-align:center;">💼 Apotek Airlangga Surabaya (November 2024 – Desember 2024)</p>
+      <p class="hobi-desc">Saya melaksanakan magang selama 1 bulan di Apotek Airlangga, Surabaya. Dalam masa magang ini, saya berfokus pada pelayanan langsung kepada pasien, penataan obat dan sistem pencatatan resep, pengelolaan obat sesuai standar praktik farmasi di apotek, melakukan peracikan obat, serta memberikan informasi penggunaan obat kepada pasien. Pengalaman ini memberi saya pemahaman nyata tentang dinamika kerja di apotek dan pentingnya ketelitian serta pelayanan yang baik kepada masyarakat.</p>
+    </div>
+
+  </div>
+</section>
+  
+<!-- Slide 7 -->
+<section>
+  <h2 style="text-align:center; font-family: 'Segoe UI', sans-serif; font-size: 28px;">💡 KETERAMPILAN (SKILL)</h2>
+  <div class="hobi-container">
+
+    <!-- Foto dan Skill -->
+    <div class="hobi-box anim-box delay-1" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em;">
+      <img src="skill.jpg" alt="Foto Rido" class="anim-img" />
+      <p class="hobi-title anim-text" style="color: #6a0dad; font-weight: bold; text-align:center;">KETERAMPILAN YANG SAYA MILIKI</p>
+      <p class="hobi-desc" style="text-align: center;">
+
+        💊 <strong>Keterampilan Farmasi & Medis</strong><br>
+        - Pengolahan Resep Obat<br>
+        - Konseling Pasien<br>
+        - Penyerahan Obat<br>
+        - Manajemen Inventaris Obat<br>
+        - Informasi dan Penggunaan Obat<br>
+        - Komunikasi Klinis<br><br>
+
+        🗣️ <strong>Keterampilan Komunikasi & Bahasa</strong><br>
+        - Public Speaking Bahasa Inggris<br>
+        - Komunikasi Bisnis<br>
+        - Komunikasi Interpersonal<br>
+        - Keterampilan Presentasi<br>
+        - Komunikasi Lintas Budaya<br>
+        - Pembawa Acara (MC/Presenter)<br><br>
+
+        🎯 <strong>Keterampilan Wirausaha & Marketing</strong><br>
+        - Branding Produk & Endorsement<br>
+        - Pembuatan Konten<br>
+        - Strategi Media Sosial<br>
+        - Digital Marketing Dasar<br>
+        - Business Pitching<br>
+        - Pemecahan Masalah Kreatif<br><br>
+
+        🧠 <strong>Soft Skills</strong><br>
+        - Kepemimpinan<br>
+        - Kerja Tim<br>
+        - Adaptabilitas<br>
+        - Berpikir Kritis<br>
+        - Manajemen Waktu<br>
+        - Kreativitas
+      </p>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="hobi-box anim-box delay-2" style="border: 3px solid #0072b1; border-radius: 10px; padding: 1em; background-color: #0072b11a;">
+      <p class="hobi-title anim-text" style="text-align: center; font-weight: bold; font-size: 18px;">
+        🌐 <a href="https://www.linkedin.com/in/ridho-attariqsyah-32b1342a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="color: #0072b1; text-decoration: underline;">Lihat lengkapnya di LinkedIn</a>
+      </p>
+    </div>
+
+    <!-- Instagram -->
+    <div class="hobi-box anim-box delay-3" style="border: 3px solid #bc2a8d; border-radius: 10px; padding: 1em; background-color: #bc2a8d1a;">
+      <p class="hobi-title anim-text" style="text-align: center; font-weight: bold; font-size: 18px;">
+        📸 <a href="https://www.instagram.com/ridho_attariqsyah?igsh=dDM4ZHAzMjB6Y3lr" target="_blank" style="color: #bc2a8d; text-decoration: underline;">Follow My Instagram</a>
+      </p>
+    </div>
+
+    <div class="hobi-box anim-box delay-5" style="border: 3px dashed #6a0dad; border-radius: 10px; padding: 1em;">
+      <p class="hobi-title anim-text" style="text-align: center; font-size: 18px;">
+        Terima kasih telah mengunjungi profil Saya, Sampai berjumpa dilain waktu 👋 
+      </p>
+    </div>
+
+  </div>
+</section>
+  
