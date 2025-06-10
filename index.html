@@ -456,6 +456,14 @@
       </p>
     </div>
 
+    <!-- WhatsApp -->
+    <div class="hobi-box anim-box delay-4" style="border: 3px solid #25D366; border-radius: 10px; padding: 1em; background-color: #25d3661a;">
+      <p class="hobi-title anim-text" style="text-align: center; font-weight: bold; font-size: 18px;">
+        📱 <a href="https://wa.me/6281334577915" target="_blank" style="color: #25D366; text-decoration: underline;">Hubungi saya via WhatsApp</a>
+      </p>
+    </div>
+
+    <!-- Terima Kasih -->
     <div class="hobi-box anim-box delay-5" style="border: 3px dashed #6a0dad; border-radius: 10px; padding: 1em;">
       <p class="hobi-title anim-text" style="text-align: center; font-size: 18px;">
         Terima kasih telah mengunjungi profil Saya, Sampai berjumpa dilain waktu 👋 
@@ -465,3 +473,136 @@
   </div>
 </section>
   
+<!-- Navigasi -->
+<div id="btns">
+  <button id="prev-btn" disabled>Sebelumnya</button>
+  <button id="next-btn">Selanjutnya</button>
+</div>
+  
+<script>
+  // --- Kode slide navigasi kamu ---
+  const slides = document.querySelectorAll('section');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  let currentSlide = 0;
+
+  function typeWriter(el, delay = 20) {
+    const text = el.getAttribute('data-original');
+    if (!text) return;
+    el.textContent = '';
+    el.style.opacity = 1;
+    let i = 0;
+    function typing() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(typing, delay);
+      }
+    }
+    typing();
+  }
+
+  function animateSlide(index) {
+    const slide = slides[index];
+    const elems = slide.querySelectorAll('p[data-original]');
+    elems.forEach(el => {
+      el.style.opacity = 0;
+      el.textContent = '';
+    });
+
+    let delayAccum = 0;
+    elems.forEach(el => {
+      setTimeout(() => typeWriter(el), delayAccum);
+      delayAccum += (el.getAttribute('data-original').length + 10) * 20;
+    });
+  }
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === slides.length - 1;
+    animateSlide(index);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentSlide > 0) {
+      currentSlide--;
+      showSlide(currentSlide);
+      clickSound.currentTime = 0;
+      clickSound.play();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentSlide < slides.length - 1) {
+      currentSlide++;
+      showSlide(currentSlide);
+      clickSound.currentTime = 0;
+      clickSound.play();
+    }
+  });
+
+  const clickSound = new Audio('clicksound.mp3');
+  animateSlide(0);
+</script>
+
+  <!-- Kontrol Musik di pojok kanan atas -->
+<div id="music-icon" title="Klik untuk play/pause musik">🔇</div>
+
+<style>
+  #music-icon {
+    position: fixed;
+    top: 4px;       /* Naik sedikit */
+    right: 12px;    /* Geser kanan */
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    user-select: none;
+    z-index: 9999;
+    transition: background 0.3s ease;
+  }
+
+  #music-icon:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+</style>
+
+<!-- Audio Element -->
+<audio id="music-audio" loop>
+  <source src="Anya.mp3" type="audio/mpeg">
+  Browser tidak mendukung audio.
+</audio>
+
+<script>
+  const musicIcon = document.getElementById('music-icon');
+  const audio = document.getElementById('music-audio');
+  let isPlaying = false;
+
+  musicIcon.addEventListener('click', () => {
+    if (!isPlaying) {
+      audio.play().then(() => {
+        musicIcon.textContent = '🔊'; // Ubah ke volume on
+        isPlaying = true;
+      }).catch((err) => {
+        musicIcon.textContent = '❌';
+        alert("Gagal memutar musik. Pastikan file 'Anya.mp3' ada.");
+        console.error("Audio error:", err);
+      });
+    } else {
+      audio.pause();
+      musicIcon.textContent = '🔇'; // Ubah ke volume off
+      isPlaying = false;
+    }
+  });
+</script>
