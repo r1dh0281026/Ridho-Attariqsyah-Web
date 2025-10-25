@@ -394,20 +394,20 @@
       <p class="hobi-desc">Saya melaksanakan magang selama 1 bulan di Apotek Airlangga, Surabaya. Dalam masa magang ini, saya berfokus pada pelayanan langsung kepada pasien, penataan obat dan sistem pencatatan resep, pengelolaan obat sesuai standar praktik farmasi di apotek, melakukan peracikan obat, serta memberikan informasi penggunaan obat kepada pasien. Pengalaman ini memberi saya pemahaman nyata tentang dinamika kerja di apotek dan pentingnya ketelitian serta pelayanan yang baik kepada masyarakat.</p>
     </div>
 
-<!-- Slide 7 -->
+  <!-- Slide 7 -->
 <section>
   <h2 style="text-align:center; font-family: 'Segoe UI', sans-serif; font-size: 28px;">💡 KETERAMPILAN (SKILL)</h2>
   
   <div class="hobi-container" style="max-width: 700px; margin: 0 auto;">
 
-    <!-- Foto -->
+    <!-- Foto Ridho -->
     <div class="hobi-box anim-box delay-1" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em; background: rgba(255,255,255,0.95); text-align:center;">
       <img src="ridho.jpg" alt="Foto Ridho" style="display:block; margin:0 auto 10px; border-radius:10px; width:150px; height:auto;" />
       <p class="hobi-title anim-text" data-original="KETERAMPILAN YANG SAYA MILIKI" style="color: #6a0dad; font-weight:bold;"></p>
     </div>
 
     <!-- Keterampilan Farmasi & Medis -->
-    <div class="hobi-box anim-box delay-2" style="border: 2px solid #6a0dad; border-radius: 10px; padding: 10px; margin-top: 10px;">
+    <div class="hobi-box anim-box delay-2" style="border: 2px solid #6a0dad; border-radius: 10px; padding: 10px; margin-top: 10px; line-height: 1.6;">
       <p class="anim-text" data-original="💊 Keterampilan Farmasi & Medis" style="font-weight:bold;"></p>
       <p class="anim-text" data-original="- Pengolahan Resep Obat
 - Konseling Pasien
@@ -418,7 +418,7 @@
     </div>
 
     <!-- Keterampilan Komunikasi & Bahasa -->
-    <div class="hobi-box anim-box delay-3" style="border: 2px solid #0072b1; border-radius: 10px; padding: 10px; margin-top: 10px;">
+    <div class="hobi-box anim-box delay-3" style="border: 2px solid #0072b1; border-radius: 10px; padding: 10px; margin-top: 10px; line-height: 1.6;">
       <p class="anim-text" data-original="🗣️ Keterampilan Komunikasi & Bahasa" style="font-weight:bold;"></p>
       <p class="anim-text" data-original="- Public Speaking Bahasa Inggris
 - Keterampilan Presentasi
@@ -427,7 +427,7 @@
     </div>
 
     <!-- Keterampilan Wirausaha & Marketing -->
-    <div class="hobi-box anim-box delay-4" style="border: 2px solid #bc2a8d; border-radius: 10px; padding: 10px; margin-top: 10px;">
+    <div class="hobi-box anim-box delay-4" style="border: 2px solid #bc2a8d; border-radius: 10px; padding: 10px; margin-top: 10px; line-height: 1.6;">
       <p class="anim-text" data-original="🎯 Keterampilan Wirausaha & Marketing" style="font-weight:bold;"></p>
       <p class="anim-text" data-original="- Branding Produk & Endorsement
 - Pembuatan Konten
@@ -437,7 +437,7 @@
     </div>
 
     <!-- Soft Skills -->
-    <div class="hobi-box anim-box delay-5" style="border: 2px solid #25D366; border-radius: 10px; padding: 10px; margin-top: 10px;">
+    <div class="hobi-box anim-box delay-5" style="border: 2px solid #25D366; border-radius: 10px; padding: 10px; margin-top: 10px; line-height: 1.6;">
       <p class="anim-text" data-original="🧠 Soft Skills" style="font-weight:bold;"></p>
       <p class="anim-text" data-original="- Teamwork (Kerja Tim)
 - Adaptabilitas
@@ -446,7 +446,7 @@
 - Kreativitas"></p>
     </div>
 
-    <!-- Link Sosial -->
+    <!-- Kotak Sosial Media -->
     <div class="hobi-box anim-box delay-6" style="border: 2px solid #0072b1; border-radius: 10px; padding: 10px; margin-top: 10px; text-align:center;">
       <p class="anim-text" data-original="🌐 LinkedIn"><a href="https://www.linkedin.com/in/ridho-attariqsyah-32b1342a5" target="_blank" style="color:#0072b1; text-decoration:underline;">Lihat LinkedIn</a></p>
     </div>
@@ -560,36 +560,7 @@ function animateSlide(index) {
 
 function showSlide(index) {
   slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-    slide.style.display = i === index ? 'block' : 'none';
-  });
-  prevBtn.disabled = index === 0;
-  nextBtn.disabled = index === slides.length - 1;
-  animateSlide(index);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-prevBtn.addEventListener('click', () => {
-  if (currentSlide > 0) {
-    currentSlide--;
-    showSlide(currentSlide);
-    clickSound.currentTime = 0;
-    clickSound.play();
-  }
-});
-
-nextBtn.addEventListener('click', () => {
-  if (currentSlide < slides.length - 1) {
-    currentSlide++;
-    showSlide(currentSlide);
-    clickSound.currentTime = 0;
-    clickSound.play();
-  }
-});
-
-showSlide(0);
-</script>
-  
+    slide.classList.toggle('active',
 
   <!-- Kontrol Musik di pojok kanan atas -->
 <div id="music-icon" title="Klik untuk play/pause musik">🔇</div>
