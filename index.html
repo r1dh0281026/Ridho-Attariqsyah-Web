@@ -396,13 +396,14 @@
 
   </div>
 </section>
-  
-<!-- Slide 7 -->
+
+  <!-- Slide 7 -->
 <section>
   <h2 style="text-align:center; font-family: 'Segoe UI', sans-serif; font-size: 28px;">💡 KETERAMPILAN (SKILL)</h2>
   
   <div class="hobi-container">
-    <div class="hobi-box anim-box delay-1" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em; background: rgba(255, 255, 255, 0.9);">
+    <!-- Box utama -->
+    <div class="hobi-box anim-box delay-1" style="border: 3px solid #6a0dad; border-radius: 10px; padding: 1em; background: rgba(255, 255, 255, 0.95);">
 
       <img src="skill.jpg" alt="Foto Ridho" class="anim-img" style="display:block; margin:0 auto 10px; border-radius:10px; width:150px; height:auto;"/>
 
@@ -410,7 +411,7 @@
         KETERAMPILAN YANG SAYA MILIKI
       </p>
 
-      <div style="font-family: Arial, sans-serif; line-height: 1.6; font-size: 15px;">
+      <div style="font-family: Arial, sans-serif; line-height: 1.6; font-size: 15px; color:#000;">
 
         <p>💊 <strong>Keterampilan Farmasi & Medis</strong><br>
         - Pengolahan Resep Obat<br>
@@ -441,7 +442,7 @@
         - Kreativitas</p>
       </div>
     </div>
-    
+
     <!-- LinkedIn -->
     <div class="hobi-box anim-box delay-2" style="border: 3px solid #0072b1; border-radius: 10px; padding: 1em; background-color: #0072b11a;">
       <p class="hobi-title anim-text" style="text-align: center; font-weight: bold; font-size: 18px;">
@@ -474,22 +475,49 @@
       font-size: 18px;
       font-family: Arial, sans-serif;
       margin-top: 10px;
+      color:#000;
     ">
       <p class="hobi-title anim-text">
-        Terima kasih telah mengunjungi profil Saya, Sampai berjumpa di lain waktu 👋 
+        🙏 Terima kasih telah mengunjungi profil saya. Sampai berjumpa di lain waktu 👋
       </p>
     </div>
-
   </div>
 </section>
 
 <style>
-@keyframes rgb-border {
-  0%   { border-color: red; }
-  25%  { border-color: orange; }
-  50%  { border-color: lime; }
-  75%  { border-color: cyan; }
-  100% { border-color: blue; }
+  /* Efek border RGB jalan penuh */
+  @keyframes rgb-border {
+    0%   { border-color: red; }
+    25%  { border-color: orange; }
+    50%  { border-color: lime; }
+    75%  { border-color: cyan; }
+    100% { border-color: blue; }
+  }
+
+  section {
+    display: none;
+  }
+
+  section.active {
+    display: block;
+  }
+
+  .hobi-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hobi-box {
+    transition: all 0.4s ease;
+  }
+
+  .hobi-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.3);
+  }
+</style>
+
 
 <!-- Navigasi -->
 <div id="btns" style="
