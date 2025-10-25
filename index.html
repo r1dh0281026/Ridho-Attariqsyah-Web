@@ -12,7 +12,7 @@
   }
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, var(--biru), var(--pink));
+    background: linear-gradient(135deg, var(--biru), var(--pink)
     margin: 0; padding: 40px 20px;
     color: var(--hitam);
   }
@@ -393,8 +393,7 @@
       <p class="hobi-title anim-text" style="color: #6a0dad; font-weight: 600; text-align:center;">💼 Apotek Airlangga Surabaya (November 2024 – Desember 2024)</p>
       <p class="hobi-desc">Saya melaksanakan magang selama 1 bulan di Apotek Airlangga, Surabaya. Dalam masa magang ini, saya berfokus pada pelayanan langsung kepada pasien, penataan obat dan sistem pencatatan resep, pengelolaan obat sesuai standar praktik farmasi di apotek, melakukan peracikan obat, serta memberikan informasi penggunaan obat kepada pasien. Pengalaman ini memberi saya pemahaman nyata tentang dinamika kerja di apotek dan pentingnya ketelitian serta pelayanan yang baik kepada masyarakat.</p>
     </div>
-
-    <!-- Slide 7 -->
+<!-- Slide 7 -->
 <section id="slide7">
   <h2 style="text-align:center; font-family:'Segoe UI',sans-serif; font-size:28px;">💡 KETERAMPILAN (SKILL)</h2>
 
@@ -453,14 +452,14 @@
   </div>
 </section>
 
-<!-- Navigasi -->
+<!-- Navigasi Fixed -->
 <div id="btns">
   <button id="prev-btn">~Back</button>
   <button id="next-btn">Next~</button>
 </div>
 
 <style>
-  /* Posisi tombol tetap di bawah tengah layar */
+  /* Tombol navigasi selalu terlihat di bawah layar */
   #btns {
     position: fixed;
     bottom: 20px;
@@ -468,7 +467,7 @@
     transform: translateX(-50%);
     display: flex;
     gap: 15px;
-    z-index: 999;
+    z-index: 9999;
   }
 
   #btns button {
@@ -491,6 +490,24 @@
   #btns button:hover:not(:disabled) {
     background-color: #520b91;
   }
+
+  section {
+    display: none;          /* sembunyikan semua slide awalnya */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  section.show {
+    display: block;
+    opacity: 1;
+  }
+
+  @keyframes rgb-border {
+    0% {border-color: red;}
+    33% {border-color: green;}
+    66% {border-color: blue;}
+    100% {border-color: red;}
+  }
 </style>
 
 <script>
@@ -501,7 +518,8 @@
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
-      slide.style.display = i === index ? 'block' : 'none';
+      slide.classList.remove('show');
+      if(i === index) slide.classList.add('show');
     });
     prevBtn.disabled = index === 0;
     nextBtn.disabled = index === slides.length - 1;
@@ -521,17 +539,9 @@
     }
   });
 
-  // Jalankan pertama kali
+  // Tampilkan slide pertama saat load
   showSlide(0);
 </script>
-<style>
-@keyframes rgb-border {
-  0% {border-color: red;}
-  33% {border-color: green;}
-  66% {border-color: blue;}
-  100% {border-color: red;}
-}
-</style>
 
 
   <!-- Kontrol Musik di pojok kanan atas -->
