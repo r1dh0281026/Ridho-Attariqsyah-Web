@@ -496,24 +496,55 @@
 }
 </style>
 <!-- Navigasi -->
-<div id="btns">
-  <button id="prev-btn" disabled>~Back</button>
-  <button id="next-btn">Next~</button>
+<div id="btns" style="
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 9999;
+">
+  <button id="prev-btn" disabled style="
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    margin: 0 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  ">~Back</button>
+
+  <button id="next-btn" style="
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    margin: 0 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  ">Next~</button>
 </div>
-  
+
 <script>
-  // --- Kode slide navigasi kamu ---
   const slides = document.querySelectorAll('section');
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
   let currentSlide = 0;
 
+  const clickSound = new Audio('clicksound.mp3');
+
+  // Fungsi mengetik teks satu per satu
   function typeWriter(el, delay = 20) {
     const text = el.getAttribute('data-original');
     if (!text) return;
     el.textContent = '';
     el.style.opacity = 1;
     let i = 0;
+
     function typing() {
       if (i < text.length) {
         el.textContent += text.charAt(i);
@@ -524,6 +555,7 @@
     typing();
   }
 
+  // Efek animasi per slide
   function animateSlide(index) {
     const slide = slides[index];
     const elems = slide.querySelectorAll('p[data-original]');
@@ -539,17 +571,21 @@
     });
   }
 
+  // Fungsi tampilkan slide tertentu
   function showSlide(index) {
     slides.forEach((slide, i) => {
       slide.classList.toggle('active', i === index);
+      slide.style.display = i === index ? 'block' : 'none';
     });
+
     prevBtn.disabled = index === 0;
     nextBtn.disabled = index === slides.length - 1;
-    animateSlide(index);
 
+    animateSlide(index);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // Tombol Back
   prevBtn.addEventListener('click', () => {
     if (currentSlide > 0) {
       currentSlide--;
@@ -559,6 +595,7 @@
     }
   });
 
+  // Tombol Next
   nextBtn.addEventListener('click', () => {
     if (currentSlide < slides.length - 1) {
       currentSlide++;
@@ -568,8 +605,8 @@
     }
   });
 
-  const clickSound = new Audio('clicksound.mp3');
-  animateSlide(0);
+  // Jalankan pertama kali
+  showSlide(0);
 </script>
 
   <!-- Kontrol Musik di pojok kanan atas -->
