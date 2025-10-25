@@ -455,9 +455,43 @@
 
 <!-- Navigasi -->
 <div id="btns">
-  <button id="prev-btn" disabled>~Back</button>
+  <button id="prev-btn">~Back</button>
   <button id="next-btn">Next~</button>
 </div>
+
+<style>
+  /* Posisi tombol tetap di bawah tengah layar */
+  #btns {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 999;
+  }
+
+  #btns button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #6a0dad;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  #btns button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+
+  #btns button:hover:not(:disabled) {
+    background-color: #520b91;
+  }
+</style>
 
 <script>
   const slides = document.querySelectorAll('section');
@@ -490,7 +524,6 @@
   // Jalankan pertama kali
   showSlide(0);
 </script>
-
 <style>
 @keyframes rgb-border {
   0% {border-color: red;}
